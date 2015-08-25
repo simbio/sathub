@@ -26,7 +26,12 @@ satcfeconf.codigo_ativacao = sathubconf.codigo_ativacao
 sathubconf.descrever()
 
 from flask import Flask
+
+class MyConfig(object):
+	RESTFUL_JSON = {'encoding': 'iso-8859-1'}
+
 app = Flask(__name__)
+app.config.from_object(MyConfig)
 
 import sathub.api
 import sathub.views
