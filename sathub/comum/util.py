@@ -22,7 +22,7 @@ import os
 import random
 import sys
 
-from satcfe.base import _FuncoesSAT
+from satcfe.base import FuncoesSAT
 from satcfe.base import DLLSAT
 
 from .config import conf
@@ -175,7 +175,7 @@ def instanciar_numerador_sessao(numero_caixa):
 
 @memoize
 def instanciar_funcoes_sat(numero_caixa):
-    funcoes_sat = _FuncoesSAT(
+    funcoes_sat = FuncoesSAT(
             dll=DLLSAT(
                     caminho=conf.caminho_dll,
                     convencao=conf.convencao_chamada),
